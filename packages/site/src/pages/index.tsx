@@ -129,10 +129,10 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+        Welcome to <Span>Metamask Donation Smart</Span>
       </Heading>
       <Subtitle>
-        Get started by editing <code>src/index.ts</code>
+        aplicativo de doação inteligente
       </Subtitle>
       <CardContainer>
         {state.error && (
