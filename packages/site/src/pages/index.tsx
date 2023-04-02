@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { MetamaskActions, MetaMaskContext } from '../hooks';
+import Web3 from 'web3';
+
 import {
   connectSnap,
   getSnap,
@@ -14,6 +16,7 @@ import {
   SendHelloButton,
   Card,
 } from '../components';
+import { DonatePanel } from '../components/DonatePanel';
 
 const Container = styled.div`
   display: flex;
@@ -111,6 +114,7 @@ const Index = () => {
         type: MetamaskActions.SetInstalled,
         payload: installedSnap,
       });
+      
     } catch (e) {
       console.error(e);
       dispatch({ type: MetamaskActions.SetError, payload: e });
@@ -124,6 +128,49 @@ const Index = () => {
       console.error(e);
       dispatch({ type: MetamaskActions.SetError, payload: e });
     }
+    
+  };const handleDonateClick = async () => {
+    try {
+      
+const web3 = new Web3;
+const contractAddress = '0x4c55528e23E21dc99c79Ee6b4A9b1286a569E8E1';
+let contract;
+
+async function connectMetaMask() {
+  // Código de conexão com a MetaMask
+}
+
+function initializeContract() {
+}
+
+{
+  (async () => {
+    await connectMetaMask();
+    initializeContract();
+  })();
+}
+
+const handleDonateClick = async () => {
+  try {
+    // Código para chamar a função de doação do contrato inteligente
+  } catch (e) {
+    console.error(e);
+    dispatch({ type: MetamaskActions.SetError, payload: e });
+  }
+};
+    } catch (e) {
+      console.error(e);
+      dispatch({ type: MetamaskActions.SetError, payload: e });
+    }
+  };
+  
+  const handleScheduleClick = async () => {
+    try {
+      // Código para chamar a função de agendamento do contrato inteligente
+    } catch (e) {
+      console.error(e);
+      dispatch({ type: MetamaskActions.SetError, payload: e });
+    }
   };
 
   return (
@@ -132,7 +179,7 @@ const Index = () => {
         Welcome to <Span>Metamask Donation Smart</Span>
       </Heading>
       <Subtitle>
-        aplicativo de doação inteligente
+      Sua criptomoeda pode mudar o mundo, doe com inteligência.
       </Subtitle>
       <CardContainer>
         {state.error && (
@@ -147,7 +194,7 @@ const Index = () => {
               description:
                 'Snaps is pre-release software only available in MetaMask Flask, a canary distribution for developers with access to upcoming features.',
               button: <InstallFlaskButton />,
-            }}
+           }}
             fullWidth
           />
         )}
@@ -202,12 +249,15 @@ const Index = () => {
             !shouldDisplayReconnectButton(state.installedSnap)
           }
         />
+
+        <DonatePanel handleDonateClick = {handleDonateClick} handleScheduledClick={handleScheduleClick}/>
+
         <Notice>
           <p>
-            Please note that the <b>snap.manifest.json</b> and{' '}
-            <b>package.json</b> must be located in the server root directory and
-            the bundle must be hosted at the location specified by the location
-            field.
+          Metamask Donate Smart é uma app de doação descentralizada que utiliza inteligência artificial 
+          para gerenciar doações programadas ou únicas, feitas através de criptomoedas e sem a necessidade 
+          de intermediários. A plataforma tem como objetivo ajudar a diminuir o monopólio de recursos 
+          ao conectar doadores diretamente com causas e projetos que precisam de financiamento.
           </p>
         </Notice>
       </CardContainer>

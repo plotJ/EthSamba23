@@ -4,6 +4,14 @@ import { Footer, Header } from './components';
 
 import { GlobalStyle } from './config/theme';
 import { ToggleThemeContext } from './Root';
+import Web3 from 'web3';
+
+const providerUrl = 'http://localhost:8000';
+const web3 = new Web3(providerUrl);
+
+if (web3.eth) {
+  // Use a propriedade eth aqui
+}
 
 const Wrapper = styled.div`
   display: flex;

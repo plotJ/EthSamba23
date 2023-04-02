@@ -5,6 +5,7 @@ import { ReactComponent as FlaskFox } from '../assets/flask_fox.svg';
 import { shouldDisplayReconnectButton } from '../utils';
 
 const Link = styled.a`
+
   display: flex;
   align-self: flex-start;
   align-items: center;

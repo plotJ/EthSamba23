@@ -46,5 +46,10 @@
   "packageManager": "yarn@3.2.1",
   "engines": {
     "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@types/web3": "^1.2.2",
+    "ethers": "^6.2.3",
+    "web3": "^1.9.0"
   }
 }
